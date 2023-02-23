@@ -3,7 +3,7 @@ type Props = {
 };
 export default function StartScreen(props: Props) {
   return (
-    <div className="flex flex-col items-center justify-evenly h-full">
+    <div className="flex flex-col items-center justify-evenly h-full relative">
       <h1 className="text-5xl pb-4">Centurion</h1>
       <div className="text-xl text-center">
         <p>The goal is simple</p>
@@ -21,6 +21,9 @@ export default function StartScreen(props: Props) {
         >
           I'm Ready
         </button>
+      </div>
+      <div className="text-center text-xs absolute bottom-1">
+        <p>Dedicated to Liam 🍻</p>
       </div>
     </div>
   );
