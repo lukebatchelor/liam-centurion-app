@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  background: linear-gradient(90deg, #f9bb73, #f9bb73, #f7ce68);
+  font-family: "Gideon Roman", cursive;
+}
+
+.animate-custom-ping {
+  animation: custom-ping 0.3s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes custom-ping {
+  100% {
+    transform: scale(1.3);
+  }
+}
