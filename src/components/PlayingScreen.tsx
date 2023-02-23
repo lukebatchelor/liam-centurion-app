@@ -4,7 +4,8 @@ import Confetti from "react-confetti";
 import useInterval from "../hooks/useInterval";
 import shotGlassSvg from "../assets/shot-glass-clipart.svg";
 
-const debug = false;
+const params = new URLSearchParams(window.location.search);
+const debugJumpTimeSecs = params.has("debug") ? Number(params.get("debug")) : 0;
 
 type Props = {};
 export default function PlayingScreen(props: Props) {
@@ -31,8 +32,7 @@ export default function PlayingScreen(props: Props) {
   const drinkButtonAnimation = waiting ? "" : "animate-custom-ping";
   const gameOver = drinkCount === 100;
   const debugAddTime = () => {
-    if (!debug) return;
-    setStartTime((startTime) => Number(startTime) - 120 * 1000);
+    setStartTime((startTime) => Number(startTime) - debugJumpTimeSecs * 1000);
   };
   const onDrinkClick = () => {
     setDrinkCount(drinkCount + 1);
