@@ -28,9 +28,13 @@ export default function PlayingScreen(props: Props) {
   )}`;
   const drinksOwed = minsSinceStart + 1;
   const waiting = drinksOwed <= drinkCount;
-  const drinkButtonText = waiting ? "Waiting..." : "Drink!";
-  const drinkButtonAnimation = waiting ? "" : "animate-custom-ping";
   const gameOver = drinkCount === 100;
+  const drinkButtonText = gameOver
+    ? "YEWWWWW"
+    : waiting
+    ? "Waiting..."
+    : "Drink!";
+  const drinkButtonAnimation = waiting || gameOver ? "" : "animate-custom-ping";
   const debugAddTime = () => {
     setStartTime((startTime) => Number(startTime) - debugJumpTimeSecs * 1000);
   };
@@ -75,7 +79,7 @@ export default function PlayingScreen(props: Props) {
       <div className="flex justify-center pt-8">
         <button
           type="button"
-          disabled={waiting}
+          disabled={waiting || gameOver}
           onClick={onDrinkClick}
           className={`text-white bg-red-700 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-xl px-10 py-4 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 ${drinkButtonAnimation}`}
         >
