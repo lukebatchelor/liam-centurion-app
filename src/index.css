@@ -7,7 +7,7 @@ body,
 #root {
   height: 100%;
   background: linear-gradient(90deg, #f9bb73, #f9bb73, #f7ce68);
-  font-family: "Gideon Roman", cursive;
+  font-family: "Gideon Roman", sans-serif;
 }
 
 .animate-custom-ping {

@@ -5,7 +5,7 @@ export default function StartScreen(props: Props) {
   return (
     <div className="flex flex-col items-center justify-evenly h-full">
       <h1 className="text-5xl pb-4">Centurion</h1>
-      <div className="text-xl">
+      <div className="text-xl text-center">
         <p>The goal is simple</p>
         <p>100 shots of beer</p>
         <p>in 100 minutes</p>
